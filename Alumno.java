@@ -19,7 +19,7 @@ public class Alumno
     public static final int NOTA_MINIMA_APROBADO = 5;
     // notas del alumno
     private ArrayListInt notas;
-    
+
     /**
      * Constructor for objects of class Alumno
      */
@@ -31,12 +31,33 @@ public class Alumno
         numeroAlumno++;
         notas = new ArrayListInt();
     }
-    
+
     /**
      * Permite introducir una nota entera del alumno.
      */
     public void addNota(int nota)
     {
-        notas.add(nota);
+        if (nota >= 0 && nota <= 10) {
+            notas.add(nota);
+        }
+        else {
+            System.out.println("El valor de la nota no es válido [entre 0-10]");
+        }
+    }
+
+    /**
+     * Permite conocer la nota media (en decimal) del alumno en este momento.
+     */
+    public float notaMedia()
+    {
+        float notaMedia = 0;
+        int numeroNotas = notas.size();
+        if (numeroNotas > 0) {
+            for (int index = 0; index < numeroNotas; index++) {
+                notaMedia += notas.get(index);
+            }
+            notaMedia /= numeroNotas;
+        }
+        return notaMedia;
     }
 }

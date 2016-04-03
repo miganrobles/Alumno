@@ -50,14 +50,22 @@ public class Alumno
      */
     public float notaMedia()
     {
-        float notaMedia = 0;
+        float notaMediaAlumno = 0;
         int numeroNotas = notas.size();
         if (numeroNotas > 0) {
             for (int index = 0; index < numeroNotas; index++) {
-                notaMedia += notas.get(index);
+                notaMediaAlumno += notas.get(index);
             }
-            notaMedia /= numeroNotas;
+            notaMediaAlumno /= numeroNotas;
         }
-        return notaMedia;
+        return notaMediaAlumno;
+    }
+    
+    /**
+     * Indica si el alumno esta aprobado o no en función de su nota media actual.
+     */
+    public boolean aprobado()
+    {
+        return notaMedia() >= NOTA_MINIMA_APROBADO;
     }
 }

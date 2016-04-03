@@ -23,12 +23,16 @@ public class TestAlumno
         nombres.add("Ana Alonso");
         ArrayList<Alumno> alumnos = new ArrayList<>();
         int index = 0;
+        final int NUMERO_DE_NOTAS = 6;
+        final int NOTA_MAXIMA = 11; // Al coger un valor aleatorio la nota maxima queda en 10
+        final int EDAD_MINIMA = 18;
+        final int EDAD_MAXIMA = 43; // Mas la EDAD_MINIMA lo que quedará una edad máxima de 60
         while (index < nombres.size()) {
-            alumnos.add(new Alumno(nombres.remove(aleatorio.nextInt(nombres.size())),aleatorio.nextInt(40) + 18));
+            alumnos.add(new Alumno(nombres.remove(aleatorio.nextInt(nombres.size())),aleatorio.nextInt(EDAD_MAXIMA) + EDAD_MINIMA));
         }
         for (Alumno alumno : alumnos) {
-            for (index = 0; index < 6; index++) {
-                alumno.addNota(aleatorio.nextInt(11));
+            for (index = 0; index < NUMERO_DE_NOTAS; index++) {
+                alumno.addNota(aleatorio.nextInt(NOTA_MAXIMA));
             }
         }
         for (Alumno alumno : alumnos) {

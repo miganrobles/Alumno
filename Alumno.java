@@ -60,12 +60,39 @@ public class Alumno
         }
         return notaMediaAlumno;
     }
-    
+
     /**
      * Indica si el alumno esta aprobado o no en función de su nota media actual.
      */
     public boolean aprobado()
     {
         return notaMedia() >= NOTA_MINIMA_APROBADO;
+    }
+
+    /**
+     * Un método que muestre todos los datos del alumno: 
+     * nombe, edad, numero de clase, notas, nota media y si esta o no aprobado.
+     */
+    public void muestraDatos()
+    {
+        System.out.println("Datos del alumno");
+        System.out.println("============================");
+        System.out.println("Nombre: " + nombre + "\nEdad: " + edad +
+            "\nNumero de clase: " + numeroId);
+        String notasAlumno = "";
+        int numeroNotas = notas.size();
+        if (numeroNotas > 0) {
+            notasAlumno += notas.get(0);
+            for (int index = 1; index < numeroNotas; index++) {
+                notasAlumno += ", " + notas.get(index);
+            }
+        }
+        System.out.println("Listado de notas: " + notasAlumno);
+        System.out.println("Nota media: " + notaMedia());
+        String aprobado = "El alumno no está aprobado";
+        if (aprobado()) {
+            aprobado = "El alumno está aprobado";
+        }
+        System.out.println(aprobado);
     }
 }

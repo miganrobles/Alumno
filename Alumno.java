@@ -31,4 +31,12 @@ public class Alumno
         numeroAlumno++;
         notas = new ArrayListInt();
     }
+    
+    /**
+     * Permite introducir una nota entera del alumno.
+     */
+    public void addNota(int nota)
+    {
+        notas.add(nota);
+    }
 }

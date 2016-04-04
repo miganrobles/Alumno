@@ -26,7 +26,7 @@ public class TestAlumno
         final int NUMERO_DE_NOTAS = 6;
         final int NOTA_MAXIMA = 11; // Al coger un valor aleatorio la nota maxima queda en 10
         final int EDAD_MINIMA = 18;
-        final int EDAD_MAXIMA = 43; // Mas la EDAD_MINIMA lo que quedará una edad máxima de 60
+        final int EDAD_MAXIMA = 43; // Mas la EDAD_MINIMA lo que quedará una edad máxima de 60 como edad máxima
         while (index < nombres.size()) {
             alumnos.add(new Alumno(nombres.remove(aleatorio.nextInt(nombres.size())),aleatorio.nextInt(EDAD_MAXIMA) + EDAD_MINIMA));
         }
@@ -37,6 +37,10 @@ public class TestAlumno
         }
         for (Alumno alumno : alumnos) {
             alumno.muestraDatos();
+            System.out.println("===========================================");
+            System.out.println("===========================================");
+            System.out.println();
+            System.out.println();
         }        
     }
 }

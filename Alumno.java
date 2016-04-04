@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 
 /**
  * Write a description of class Alumno here.
@@ -88,7 +89,8 @@ public class Alumno
             }
         }
         System.out.println("Listado de notas: " + notasAlumno);
-        System.out.println("Nota media: " + notaMedia());
+        DecimalFormat decimales = new DecimalFormat("0.00");
+        System.out.println("Nota media: " + decimales.format(notaMedia()));
         String aprobado = "El alumno no está aprobado";
         if (aprobado()) {
             aprobado = "El alumno está aprobado";
